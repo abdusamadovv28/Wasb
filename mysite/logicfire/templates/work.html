@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="genres-page">
+    <div class="container">
+        <div class="section-header">
+            <h1>Manga Genres</h1>
+            <p>Browse manga by your favorite genres</p>
+        </div>
+
+        <div class="genres-grid">
+            {% for genre in genres %}
+            <a href="{% url 'genre_detail' genre.slug %}" class="genre-card {{ genre.slug }}">
+                <i class="fas fa-{{ genre.icon }}"></i>
+                <span>{{ genre.name }}</span>
+                <small>{{ genre.manga_count }} titles</small>
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="popular-tags">
+            <h2>Popular Tags</h2>
+            <div class="tags-cloud">
+                {% for tag in popular_tags %}
+                <a href="{% url 'tag_detail' tag.slug %}" class="tag" style="font-size: {{ tag.size }}px;">
+                    {{ tag.name }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}w

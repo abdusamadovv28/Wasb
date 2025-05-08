@@ -1,0 +1,35 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>LogicFire</h3>
+                <p>Your premier destination for manga reading. Discover, read, and enjoy thousands of manga titles.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'manga_list' %}">Manga List</a></li>
+                    <li><a href="{% url 'genres' %}">Genres</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="{% url 'terms' %}">Terms of Service</a></li>
+                    <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {% now "Y" %} LogicFire. All rights reserved.</p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to LogicFire</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#64748b'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="text-center">
+            <h1 class="text-4xl font-['Pacifico'] text-primary mb-4">LogicFire</h1>
+            <p class="text-lg text-gray-600 mb-8">Welcome to our platform</p>
+            <div class="space-x-4">
+                <!-- Use Django's url template tag for proper routing -->
+                <a href="{% url 'login' %}" class="px-6 py-3 bg-primary text-white rounded-button font-medium">Login</a>
+                <a href="{% url 'register' %}" class="px-6 py-3 border border-primary text-primary rounded-button font-medium">Register</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

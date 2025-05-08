@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="about-section">
+    <div class="container">
+        <div class="about-header">
+            <h1>About LogicFire</h1>
+            <p class="subtitle">Your gateway to the world of manga</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-image">
+                <img src="{% static 'images/about.jpg' %}" alt="About LogicFire">
+            </div>
+            <div class="about-text">
+                <h2>Our Story</h2>
+                <p>Founded in 2023, LogicFire was created by manga enthusiasts for manga enthusiasts. We noticed a lack of high-quality, ad-free manga platforms with a focus on user experience, so we decided to build our own.</p>
+                
+                <h2>Our Mission</h2>
+                <p>To provide manga fans with a seamless reading experience, high-quality translations, and a community where they can discover new titles and connect with fellow fans.</p>
+                
+                <h2>Features</h2>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> Thousands of manga titles</li>
+                    <li><i class="fas fa-check"></i> Regular updates</li>
+                    <li><i class="fas fa-check"></i> Personalized recommendations</li>
+                    <li><i class="fas fa-check"></i> Reading lists and bookmarks</li>
+                    <li><i class="fas fa-check"></i> Community discussions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h2>Meet The Team</h2>
+            <div class="team-grid">
+                {% for member in team_members %}
+                <div class="team-card">
+                    <img src="{{ member.photo.url }}" alt="{{ member.name }}">
+                    <h3>{{ member.name }}</h3>
+                    <p class="position">{{ member.position }}</p>
+                    <div class="social-links">
+                        {% if member.twitter %}<a href="{{ member.twitter }}"><i class="fab fa-twitter"></i></a>{% endif %}
+                        {% if member.github %}<a href="{{ member.github }}"><i class="fab fa-github"></i></a>{% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

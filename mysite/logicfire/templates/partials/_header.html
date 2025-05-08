@@ -1,0 +1,30 @@
+{% load static %}
+<nav class="navbar">
+    <div class="container">
+        <a href="{% url 'home' %}" class="logo">
+            <span class="logo-icon"><i class="fas fa-fire"></i></span>
+            <span class="logo-text">LogicFire</span>
+        </a>
+        <div class="nav-links">
+            <a href="{% url 'home' %}" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+            <a href="{% url 'manga_list' %}" class="nav-link {% if 'manga' in request.path %}active{% endif %}">Manga</a>
+            <a href="{% url 'genres' %}" class="nav-link {% if 'genres' in request.path %}active{% endif %}">Genres</a>
+            <a href="{% url 'about' %}" class="nav-link {% if 'about' in request.path %}active{% endif %}">About</a>
+            <div class="search-box">
+                <input type="text" placeholder="Search manga...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="auth-buttons">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="btn btn-outline">Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-outline">Login</a>
+                    <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+                {% endif %}
+            </div>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
